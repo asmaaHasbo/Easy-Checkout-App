@@ -15,7 +15,7 @@ class _PaymentsWaysListViewState extends State<PaymentsWaysListView> {
     'assets/images/paypal.svg',
   ];
 
-   int activeIndex = 0;
+  int activeIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +30,7 @@ class _PaymentsWaysListViewState extends State<PaymentsWaysListView> {
             return GestureDetector(
               onTap: () {
                 activeIndex = index;
-                setState(() {
-                  
-                });
+                setState(() {});
               },
               child: PaymentWayItem(
                 isActive: activeIndex == index,

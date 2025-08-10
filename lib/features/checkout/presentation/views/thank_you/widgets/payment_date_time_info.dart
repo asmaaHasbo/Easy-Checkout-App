@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PaymentDateTimeInfo extends StatelessWidget {
-  const PaymentDateTimeInfo({super.key, required this.title, required this.value});
+  const PaymentDateTimeInfo({
+    super.key,
+    required this.title,
+    required this.value,
+  });
   final String title;
   final String value;
 
@@ -13,7 +17,7 @@ class PaymentDateTimeInfo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title, style: AppStyles.font18W400Black),
-        Text(value, style: AppStyles.font20W600Black.copyWith(fontSize:18.sp)),
+        Text(value, style: AppStyles.font20W600Black.copyWith(fontSize: 18.sp)),
       ],
     );
   }
