@@ -1,13 +1,10 @@
-
 import 'package:easy_checkout/core/themes/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CardInfo extends StatelessWidget {
-  const CardInfo({
-    super.key,
-  });
+  const CardInfo({super.key});
 
   @override
   Widget build(BuildContext context) {

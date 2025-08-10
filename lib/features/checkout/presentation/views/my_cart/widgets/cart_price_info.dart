@@ -2,7 +2,11 @@ import 'package:easy_checkout/core/themes/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CartPriceInfo extends StatelessWidget {
-  const CartPriceInfo({super.key, required this.priceName, required this.price});
+  const CartPriceInfo({
+    super.key,
+    required this.priceName,
+    required this.price,
+  });
   final String priceName;
   final String price;
   @override

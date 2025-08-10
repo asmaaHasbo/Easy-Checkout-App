@@ -13,7 +13,7 @@ class PaymentWayItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only( right:16.0.w),
+      padding: EdgeInsets.only(right: 16.0.w),
       child: AnimatedContainer(
         duration: Duration(milliseconds: 600),
         width: 103.w,
@@ -22,8 +22,7 @@ class PaymentWayItem extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
-            color:
-                isActive ? Color(0xff34A853) : Colors.grey,
+            color: isActive ? Color(0xff34A853) : Colors.grey,
             width: 1.5.w,
           ),
           boxShadow: [

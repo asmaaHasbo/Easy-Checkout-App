@@ -1,4 +1,3 @@
-
 import 'package:easy_checkout/core/themes/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 
