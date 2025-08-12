@@ -4,6 +4,6 @@ import 'package:easy_checkout/features/checkout/data/models/payment_intent_reque
 
 abstract class CheckoutRepo {
   Future<Either<Failure, void>> makePayment(
-    PaymentIntentRequestModel paymmentIntentRequestModel,
+    PaymentIntentRequestModel paymentIntentRequestModel,
   );
 }
