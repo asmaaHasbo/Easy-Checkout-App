@@ -1,9 +1,12 @@
+import 'package:easy_checkout/core/api/api_keys.dart';
 import 'package:easy_checkout/features/checkout/presentation/views/my_cart/my_cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  Stripe.publishableKey =  ApiKeys.publishableKey;
   runApp(const MyApp());
 }
 

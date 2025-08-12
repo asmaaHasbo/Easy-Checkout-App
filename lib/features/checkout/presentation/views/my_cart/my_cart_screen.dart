@@ -1,9 +1,12 @@
 import 'package:easy_checkout/core/shared/custom_elevated_btn.dart';
 import 'package:easy_checkout/core/themes/styles/app_styles.dart';
+import 'package:easy_checkout/features/checkout/data/repos/checkout_repo_implmention.dart';
+import 'package:easy_checkout/features/checkout/logic/cubit/checkout_cubit.dart';
 import 'package:easy_checkout/features/checkout/presentation/views/my_cart/widgets/cart_price_info.dart';
+import 'package:easy_checkout/features/checkout/presentation/views/my_cart/widgets/choose_payment_way_modal_sheet.dart';
 import 'package:easy_checkout/features/checkout/presentation/views/my_cart/widgets/total_price.dart';
-import 'package:easy_checkout/features/checkout/presentation/views/payment_ways/widgets/payments_ways_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyCartScreen extends StatelessWidget {
@@ -44,13 +47,20 @@ class MyCartScreen extends StatelessWidget {
               ),
 
               TotalPrice(price: '19.9'),
+
               SizedBox(height: 20.h),
+
               CustomElevatedBtn(
                 onPress: () {
                   showModalBottomSheet(
                     context: context,
                     builder: (context) {
-                      return ChoosePaymentWayModalSheet();
+                      return BlocProvider(
+                        create:
+                            (context) =>
+                                CheckoutCubit(CheckoutRepoImplmention()),
+                        child: ChoosePaymentWayModalSheet(),
+                      );
                     },
                   );
                 },
@@ -60,26 +70,6 @@ class MyCartScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class ChoosePaymentWayModalSheet extends StatelessWidget {
-  const ChoosePaymentWayModalSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Padding(
-          padding: EdgeInsets.only(left: 65.w, top: 20.h),
-          child: PaymentsWaysListView(),
-        ),
-        SizedBox(height: 20.h),
-        CustomElevatedBtn(btnName: 'Continue', onPress: () {}),
-        SizedBox(height: 24.h),
-      ],
     );
   }
 }
