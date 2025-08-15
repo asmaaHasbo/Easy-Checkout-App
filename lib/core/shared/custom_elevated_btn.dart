@@ -6,7 +6,8 @@ class CustomElevatedBtn extends StatelessWidget {
   const CustomElevatedBtn({
     super.key,
     required this.onPress,
-    required this.btnName, this.isLoading = false,
+    required this.btnName,
+    this.isLoading = false,
   });
   final void Function() onPress;
   final String btnName;
@@ -22,10 +23,13 @@ class CustomElevatedBtn extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.r),
         ),
       ),
-      child: isLoading ? CircularProgressIndicator() : Text(
-        btnName,
-        style: AppStyles.font25W500Black.copyWith(fontSize: 22.sp),
-      ),
+      child:
+          isLoading
+              ? CircularProgressIndicator()
+              : Text(
+                btnName,
+                style: AppStyles.font25W500Black.copyWith(fontSize: 22.sp),
+              ),
     );
   }
 }

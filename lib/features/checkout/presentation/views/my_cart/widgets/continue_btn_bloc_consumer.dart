@@ -4,6 +4,7 @@ import 'package:easy_checkout/features/checkout/logic/cubit/checkout_cubit.dart'
 import 'package:easy_checkout/features/checkout/presentation/views/thank_you/thank_you_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 class ContinueBtnBlocConsumer extends StatelessWidget {
   const ContinueBtnBlocConsumer({super.key});
 
@@ -32,12 +33,14 @@ class ContinueBtnBlocConsumer extends StatelessWidget {
           onPress: () {
             PaymentIntentRequestModel paymentIntentRequestModel =
                 PaymentIntentRequestModel(
-                  amount: '2000', // Example amount in cents
-                  currency: 'usd', // Example currency
+                  amount: '2000',
+                  currency: 'usd',
+                  customerId: 'cus_SriaNU35kczbzX',
+                  // Example customer ID
                 );
-            context.read<CheckoutCubit>().makePayment(
-              paymentIntentRequestModel,
-            );
+            BlocProvider.of<CheckoutCubit>(
+              context,
+            ).makePayment(paymentIntentRequestModel);
           },
         );
       },

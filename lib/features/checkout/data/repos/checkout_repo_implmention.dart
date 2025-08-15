@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:easy_checkout/core/errors/failure.dart';
 import 'package:easy_checkout/core/stripe/stripe_service.dart';
@@ -17,10 +19,8 @@ class CheckoutRepoImplmention extends CheckoutRepo {
 
       return right(null);
     } catch (e) {
-      return left(
-        ServerFailure(errMsg: e.toString())
-      );
+      log('Error in rebo makePayment: ${e.toString()}');
+      return left(ServerFailure(errMsg: e.toString()));
     }
   }
-
 }

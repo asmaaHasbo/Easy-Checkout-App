@@ -22,4 +22,3 @@ class ChoosePaymentWayModalSheet extends StatelessWidget {
     );
   }
 }
-

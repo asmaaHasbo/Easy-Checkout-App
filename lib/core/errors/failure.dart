@@ -1,8 +1,7 @@
 class Failure {
-  final String errMsg ;
+  final String errMsg;
 
   Failure({required this.errMsg});
-  
 }
 
 class ServerFailure extends Failure {

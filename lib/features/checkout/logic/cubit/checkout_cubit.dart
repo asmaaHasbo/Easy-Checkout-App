@@ -17,10 +17,10 @@ class CheckoutCubit extends Cubit<CheckoutState> {
     emit(CheckoutLoading());
     var data = await checkoutRepo.makePayment(paymentIntentRequestModel);
 
-    data.fold(
-      (l) => emit(CheckoutFailure(errorMessage: l.errMsg)),
-      (r) => emit(CheckoutSuccess()),
-    );
+    data.fold((l) {
+      log('Error in cubit makePayment: ${l.errMsg}');
+      emit(CheckoutFailure(errorMessage: l.errMsg));
+    }, (r) => emit(CheckoutSuccess()));
   }
 
   @override
