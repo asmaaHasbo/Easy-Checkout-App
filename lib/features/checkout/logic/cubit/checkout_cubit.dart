@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:easy_checkout/features/checkout/data/models/payment_intent_request_model.dart';
 import 'package:easy_checkout/features/checkout/data/repos/checkout_repo.dart';
+import 'package:easy_checkout/features/checkout/data/stripe_models/payment_intent_request_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

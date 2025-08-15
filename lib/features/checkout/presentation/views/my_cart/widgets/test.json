@@ -1,0 +1,9 @@
+{
+    "total": "100",
+    "currency": "USD",
+    "details": {
+        "subtotal": "80",
+        "shipping": "20",
+        "shipping_discount": 0
+    }
+}
